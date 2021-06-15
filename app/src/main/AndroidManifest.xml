@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="app.autosilenceapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature android:name="android.hardware.location" />
+
+    <application
+        android:allowBackup="true"
+        android:grantUriPermissions="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/mosque"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:launchMode="standard"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/mosque"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AutoSilenceApp"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".QazaRecord.AllNamazRecordToday"></activity>
+        <activity android:name=".Quran.PdfOpnerActivity" />
+        <activity android:name=".Quran.quran" />
+        <activity android:name=".Mosque.findMosque" />
+        <activity
+            android:name=".zikrCounter.zikrCounter"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".QiblaDirection.CompassActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".sensors.MainActivity3" />
+        <activity android:name=".sensors.sensor" />
+        <activity android:name=".QazaRecord.AllNamazRecord" />
+        <activity android:name=".AsmaUlHusna.NamesofALLAH" />
+        <activity android:name=".NamazTimeList" />
+        <activity android:name=".QazaRecord.QazaNamazRecord" />
+        <activity android:name=".NamazReminder" />
+
+        <service android:name=".onboardScreens.AudioService" />
+
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".onboardScreens.WelcomeActivity" />
+
+        <service android:name=".MovementRecongnition.BackgroundDetectedActivitiesService" />
+        <service android:name=".MovementRecongnition.DetectedActivitiesIntentService" />
+
+        <activity android:name=".MovementRecongnition.AutoDetect" />
+        <activity android:name=".SignUp.Login" />
+        <activity android:name=".SignUp.SignUpaccount" />
+
+
+        <service android:name=".sensors.BroadcastService" />
+        <service
+            android:name=".Notifications.MyNewIntentService"
+            android:exported="false" />
+        <service android:name=".firebasenotifications.FirebaseMessageReceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".serviceexample.SetToNormalService" />
+
+        <receiver android:name=".Notifications.MyReceiver_Not" />
+        <receiver android:name=".serviceexample.MyReceiverexample" />
+        <receiver android:name=".serviceexample.MyRecieverexample2" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAND1J92IKgOKuFAetkuJrwKj2T4-v9EYQ" />
+    </application>
+
+</manifest>
